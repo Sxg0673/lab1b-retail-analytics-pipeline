@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import xml.etree.ElementTree as ET
 
 # ============================================================
 # Cali CSV
@@ -101,8 +103,6 @@ print(df_bogota[fechas_bogota.isna()])
 # ============================================================
 # Medellin XML
 # ============================================================
-import xml.etree.ElementTree as ET
-
 tree = ET.parse("data/raw/sales_medellin.xml")
 root = tree.getroot()
 
@@ -222,3 +222,34 @@ print(resumen_medellin)
 
 resumen_medellin.to_csv("docs/eda_outputs/tablas/03_resumen_eda_medellin.csv", index=False)
 print("\nTabla guardada en docs/eda_outputs/tablas/03_resumen_eda_medellin.csv")
+
+
+
+
+
+## --- Grafica: problemas de calidad agregados ---
+total_por_categoria = {
+    "Cantidad invalida": resumen_cali.iloc[3]["valor"] + resumen_bogota.iloc[3]["valor"] + resumen_medellin.iloc[3]["valor"],
+    "Precio invalido": resumen_cali.iloc[4]["valor"] + resumen_bogota.iloc[4]["valor"] + resumen_medellin.iloc[4]["valor"],
+    "Duplicados": resumen_cali.iloc[5]["valor"] + resumen_bogota.iloc[5]["valor"] + resumen_medellin.iloc[5]["valor"],
+    "Inconsistencia categorica": max(0, resumen_cali.iloc[6]["valor"]-3) + max(0, resumen_bogota.iloc[6]["valor"]-3) + max(0, resumen_medellin.iloc[6]["valor"]-3),
+    "Fechas invalidas": resumen_cali.iloc[7]["valor"] + resumen_bogota.iloc[7]["valor"] + resumen_medellin.iloc[7]["valor"],
+}
+
+fig, ax = plt.subplots(figsize=(7, 4.5))
+etiquetas = list(total_por_categoria.keys())
+valores = list(total_por_categoria.values())
+colores = ["#C1873B", "#B03A48", "#6A4C93", "#2C6E8F", "#3E7C55"]
+
+barras = ax.barh(etiquetas, valores, color=colores)
+ax.set_xlabel("Cantidad de registros afectados (combinando las 3 fuentes)")
+ax.set_title("Problemas de calidad encontrados en el EDA")
+ax.set_xlim(0, max(valores) + 1)
+
+for barra, valor in zip(barras, valores):
+    ax.text(barra.get_width() + 0.05, barra.get_y() + barra.get_height()/2,
+            str(valor), va="center", fontweight="bold")
+
+plt.tight_layout()
+fig.savefig("docs/eda_outputs/graficas/01_problemas_calidad_agregados.png", dpi=150)
+print("\nGrafica agregada guardada.")
