@@ -19,3 +19,4 @@ env/
 # Nota: la base de datos SQLite (database/retail_analytics.db) y los
 # archivos procesados SI se suben al repo como entregable final del
 # taller, por lo tanto NO se ignoran aqui a proposito.
+venv/
