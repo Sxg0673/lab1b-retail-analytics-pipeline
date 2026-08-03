@@ -1,0 +1,9 @@
+hallazgo,valor
+Filas totales,241
+Columnas totales,8
+promo_code vacio (string vacio),228
+Units invalida (<=0 o no numerico),0
+Unit_value invalido (<=0 o no numerico),1
+line_id duplicados,1
+Valores distintos payment,3
+Fechas invalidas,1

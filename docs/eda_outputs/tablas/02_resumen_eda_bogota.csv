@@ -1,0 +1,9 @@
+hallazgo,valor
+Filas totales,281
+Columnas totales,8
+Nulos en promocion,261
+Unidades invalida (<=0),1
+Precio invalido (<=0 o no numerico),1
+id_linea duplicados,1
+Valores distintos medio_pago,4
+Fechas invalidas,0
