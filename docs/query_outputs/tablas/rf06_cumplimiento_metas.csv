@@ -1,0 +1,10 @@
+store_name,month,ventas_reales,meta,diferencia,estado
+Bogotá Centro,2026-02,21549200.0,23000000,-1450800.0,No cumplida
+Bogotá Centro,2026-03,19242540.0,24000000,-4757460.0,No cumplida
+Bogotá Centro,2026-04,21537000.0,25000000,-3463000.0,No cumplida
+Cali Norte,2026-02,22867500.0,19500000,3367500.0,Cumplida
+Cali Norte,2026-03,18213200.0,20500000,-2286800.0,No cumplida
+Cali Norte,2026-04,20354000.0,21500000,-1146000.0,No cumplida
+Medellín Poblado,2026-02,18451000.0,20500000,-2049000.0,No cumplida
+Medellín Poblado,2026-03,23463420.0,21500000,1963420.0,Cumplida
+Medellín Poblado,2026-04,15289000.0,22500000,-7211000.0,No cumplida
