@@ -9,12 +9,10 @@ COMMON_COLUMNS = [
 
 
 def extract_from_csv(file_path):
-
     return pd.read_csv(file_path, encoding="utf-8-sig")
 
 
-def extract_from_json(file_path): 
-
+def extract_from_json(file_path):
     df = pd.read_json(file_path)
     df = df.rename(columns={
         "id_linea": "sale_line_id",
@@ -30,7 +28,6 @@ def extract_from_json(file_path):
 
 
 def extract_from_xml(file_path):
- 
     tree = ET.parse(file_path)
     root = tree.getroot()
 
