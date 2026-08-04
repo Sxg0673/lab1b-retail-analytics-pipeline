@@ -1,0 +1,18 @@
+dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
+monthly_targets,store_id,str,0,0.0,3,,,,,,0,"{
+  ""S01"": 3,
+  ""S02"": 3,
+  ""S03"": 3
+}",S01,3.0,3.0
+monthly_targets,month,str,0,0.0,3,,,,,,0,"{
+  ""2026-02"": 3,
+  ""2026-03"": 3,
+  ""2026-04"": 3
+}",2026-02,7.0,7.0
+monthly_targets,sales_target,int64,0,0.0,7,19500000.0,25000000.0,22000000.0,21500000.0,1785357.1071357124,0,"{
+  ""20500000"": 2,
+  ""21500000"": 2,
+  ""19500000"": 1,
+  ""23000000"": 1,
+  ""24000000"": 1
+}",,,

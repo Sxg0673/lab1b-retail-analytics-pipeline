@@ -1,0 +1,12 @@
+Perfil de datos: products
+Filas: 15
+Columnas: 5
+Celdas vacías: 0
+Filas duplicadas: 0
+
+Resumen por columna:
+- product_id | dtype=str | nulos=0 | únicos=15
+- product_name | dtype=str | nulos=0 | únicos=15
+- category | dtype=str | nulos=0 | únicos=4
+- list_price | dtype=int64 | nulos=0 | únicos=15
+- unit_cost | dtype=int64 | nulos=0 | únicos=15

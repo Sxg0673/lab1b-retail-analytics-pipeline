@@ -1,0 +1,2 @@
+dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
+promotions,6,6,0.0,0,6,0

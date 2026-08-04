@@ -5,20 +5,20 @@ from pathlib import Path
 import pandas as pd
 
 
-def _sanitize_name(name: str) -> str:
+def _sanitize_name(name: str) -> str: # Sanitiza un nombre de dataset para que sea seguro como nombre de archivo, reemplazando caracteres no permitidos por guiones bajos y eliminando puntos o guiones al inicio o final.
     return re.sub(r"[^A-Za-z0-9._-]+", "_", name).strip("._")
 
 
-def _serialize_values(values) -> str:
+def _serialize_values(values) -> str: # Serializa un diccionario de valores a una cadena JSON con indentación y sin escapar caracteres no ASCII.
     return json.dumps(values, ensure_ascii=False, indent=2)
 
 
-def profile_dataframe(df: pd.DataFrame, dataset_name: str, output_dir: str | Path | None = None):
+def profile_dataframe(df: pd.DataFrame, dataset_name: str, output_dir: str | Path | None = None): 
     """Genera un perfil detallado de un DataFrame y guarda reportes en disco."""
     output_dir = Path(output_dir) if output_dir is not None else Path("docs/eda_outputs/perfiles")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    safe_name = _sanitize_name(dataset_name)
+    safe_name = _sanitize_name(dataset_name) 
     summary = {
         "dataset_name": dataset_name,
         "rows": int(df.shape[0]),
@@ -54,7 +54,7 @@ def profile_dataframe(df: pd.DataFrame, dataset_name: str, output_dir: str | Pat
                 "invalid_numeric_values": int(numeric_series.isna().sum() - series.isna().sum()),
                 "top_values": _serialize_values(series.value_counts(dropna=False).head(5).to_dict()),
             }
-        elif pd.api.types.is_datetime64_any_dtype(series):
+        elif pd.api.types.is_datetime64_any_dtype(series): 
             profile = {
                 "dataset_name": dataset_name,
                 "column": column,
@@ -100,7 +100,7 @@ def profile_dataframe(df: pd.DataFrame, dataset_name: str, output_dir: str | Pat
     overview_df.to_csv(output_dir / f"{safe_name}_overview.csv", index=False)
     columns_df.to_csv(output_dir / f"{safe_name}_columns.csv", index=False)
 
-    report_lines = [
+    report_lines = [ 
         f"Perfil de datos: {dataset_name}",
         f"Filas: {summary['rows']}",
         f"Columnas: {summary['columns']}",

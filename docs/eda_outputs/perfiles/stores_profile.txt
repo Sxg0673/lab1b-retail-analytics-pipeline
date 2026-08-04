@@ -1,0 +1,11 @@
+Perfil de datos: stores
+Filas: 3
+Columnas: 4
+Celdas vacías: 0
+Filas duplicadas: 0
+
+Resumen por columna:
+- store_id | dtype=str | nulos=0 | únicos=3
+- store_name | dtype=str | nulos=0 | únicos=3
+- city | dtype=str | nulos=0 | únicos=3
+- region | dtype=str | nulos=0 | únicos=3

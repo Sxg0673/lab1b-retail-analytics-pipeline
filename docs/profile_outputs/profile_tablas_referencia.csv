@@ -1,0 +1,5 @@
+dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
+products,15,5,0.0,0,15,0
+stores,3,4,0.0,0,3,0
+promotions,6,6,0.0,0,6,0
+monthly_targets,9,3,0.0,0,9,0
