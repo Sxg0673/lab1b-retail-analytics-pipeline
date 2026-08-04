@@ -1,0 +1,9 @@
+hallazgo,valor
+Filas totales,763
+Columnas totales,9
+Ventas sin promotion_code (NaN + vacio),717
+quantity invalida (<=0 o no numerica),2
+unit_price invalido (<=0 o no numerico),2
+sale_line_id duplicados,3
+Valores distintos en payment_method,5
+Fechas invalidas,1
