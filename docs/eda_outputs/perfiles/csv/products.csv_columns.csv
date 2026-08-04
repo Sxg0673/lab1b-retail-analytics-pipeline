@@ -1,0 +1,35 @@
+dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
+products.csv,product_id,object,0,0.0,15,,,,,,0,"{
+  ""P001"": 1,
+  ""P002"": 1,
+  ""P003"": 1,
+  ""P004"": 1,
+  ""P005"": 1
+}",P001,4.0,4.0
+products.csv,product_name,object,0,0.0,15,,,,,,0,"{
+  ""Coffee Maker Basic"": 1,
+  ""Coffee Maker Premium"": 1,
+  ""Blender 500W"": 1,
+  ""Air Fryer 4L"": 1,
+  ""Wireless Headphones"": 1
+}",Air Fryer 4L,10.0,20.0
+products.csv,category,object,0,0.0,4,,,,,,0,"{
+  ""Small Appliances"": 4,
+  ""Electronics"": 4,
+  ""Home & Office"": 4,
+  ""Personal Care"": 3
+}",Electronics,11.0,16.0
+products.csv,list_price,int64,0,0.0,15,35000.0,390000.0,171133.33333333334,145000.0,96461.58870368087,0,"{
+  ""145000"": 1,
+  ""285000"": 1,
+  ""175000"": 1,
+  ""390000"": 1,
+  ""220000"": 1
+}",,,
+products.csv,unit_cost,int64,0,0.0,15,17000.0,295000.0,116533.33333333333,98000.0,76968.32991252837,0,"{
+  ""98000"": 1,
+  ""205000"": 1,
+  ""122000"": 1,
+  ""295000"": 1,
+  ""155000"": 1
+}",,,

@@ -1,0 +1,2 @@
+dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
+products.csv,15,5,0.0,0,15,0

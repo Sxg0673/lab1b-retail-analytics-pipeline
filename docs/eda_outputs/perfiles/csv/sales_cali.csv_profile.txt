@@ -1,0 +1,15 @@
+Perfil de datos: sales_cali.csv
+Filas: 241
+Columnas: 8
+Celdas vacías: 228
+Filas duplicadas: 1
+
+Resumen por columna:
+- sale_line_id | dtype=object | nulos=0 | únicos=240
+- sale_date | dtype=object | nulos=0 | únicos=82
+- store_id | dtype=object | nulos=0 | únicos=1
+- product_id | dtype=object | nulos=0 | únicos=16
+- quantity | dtype=int64 | nulos=0 | únicos=5
+- unit_price | dtype=int64 | nulos=0 | únicos=15
+- promotion_code | dtype=object | nulos=228 | únicos=5
+- payment_method | dtype=object | nulos=0 | únicos=4

@@ -1,0 +1,52 @@
+dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
+sales_cali.csv,sale_line_id,object,0,0.0,240,,,,,,0,"{
+  ""L00167"": 2,
+  ""L00001"": 1,
+  ""L00003"": 1,
+  ""L00002"": 1,
+  ""L00005"": 1
+}",L00167,6.0,6.0
+sales_cali.csv,sale_date,object,0,0.0,82,,,,,,0,"{
+  ""2026-04-20"": 8,
+  ""2026-02-27"": 7,
+  ""2026-02-25"": 7,
+  ""2026-02-12"": 7,
+  ""2026-04-02"": 6
+}",2026-04-20,10.0,10.0
+sales_cali.csv,store_id,object,0,0.0,1,,,,,,0,"{
+  ""S01"": 241
+}",S01,3.0,3.0
+sales_cali.csv,product_id,object,0,0.0,16,,,,,,0,"{
+  ""P010"": 28,
+  ""P013"": 25,
+  ""P003"": 24,
+  ""P005"": 23,
+  ""P008"": 21
+}",P010,4.0,6.0
+sales_cali.csv,quantity,int64,0,0.0,5,0.0,4.0,1.6058091286307055,1.0,0.805066941367603,0,"{
+  ""1"": 135,
+  ""2"": 69,
+  ""3"": 30,
+  ""4"": 6,
+  ""0"": 1
+}",,,
+sales_cali.csv,unit_price,int64,0,0.0,15,35000.0,390000.0,163734.4398340249,138000.0,92927.59287364046,0,"{
+  ""115000"": 28,
+  ""135000"": 25,
+  ""175000"": 24,
+  ""220000"": 23,
+  ""35000"": 21
+}",,,
+sales_cali.csv,promotion_code,object,228,94.61,5,,,,,,0,"{
+  ""NaN"": 228,
+  ""PROMO20"": 5,
+  ""PROMO10"": 3,
+  ""PROMO12"": 2,
+  ""PROMO15"": 2
+}",PROMO20,7.0,8.0
+sales_cali.csv,payment_method,object,0,0.0,4,,,,,,0,"{
+  ""Cash"": 88,
+  ""Transfer"": 79,
+  ""Card"": 73,
+  "" card "": 1
+}",Cash,4.0,8.0

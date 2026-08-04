@@ -1,0 +1,11 @@
+Perfil de datos: stores.csv
+Filas: 3
+Columnas: 4
+Celdas vacías: 0
+Filas duplicadas: 0
+
+Resumen por columna:
+- store_id | dtype=object | nulos=0 | únicos=3
+- store_name | dtype=object | nulos=0 | únicos=3
+- city | dtype=object | nulos=0 | únicos=3
+- region | dtype=object | nulos=0 | únicos=3

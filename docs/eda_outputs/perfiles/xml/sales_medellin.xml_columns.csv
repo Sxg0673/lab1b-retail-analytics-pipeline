@@ -1,0 +1,50 @@
+dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
+sales_medellin.xml,sale_line_id,object,0,0.0,240,,,,,,0,"{
+  ""L00602"": 2,
+  ""L00521"": 1,
+  ""L00523"": 1,
+  ""L00522"": 1,
+  ""L00525"": 1
+}",L00602,6,6
+sales_medellin.xml,sale_date,object,0,0.0,81,,,,,,0,"{
+  ""02-27-2026"": 7,
+  ""03-17-2026"": 7,
+  ""02-10-2026"": 6,
+  ""02-14-2026"": 6,
+  ""03-04-2026"": 6
+}",02-27-2026,10,10
+sales_medellin.xml,store_id,object,0,0.0,1,,,,,,0,"{
+  ""S03"": 241
+}",S03,3,3
+sales_medellin.xml,product_id,object,0,0.0,15,,,,,,0,"{
+  ""P003"": 30,
+  ""P009"": 28,
+  ""P012"": 25,
+  ""P013"": 25,
+  ""P010"": 22
+}",P003,4,4
+sales_medellin.xml,quantity,object,0,0.0,4,,,,,,0,"{
+  ""1"": 153,
+  ""2"": 61,
+  ""3"": 21,
+  ""4"": 6
+}",1,1,1
+sales_medellin.xml,unit_price,object,0,0.0,16,,,,,,0,"{
+  ""175000"": 30,
+  ""92000"": 28,
+  ""135000"": 25,
+  ""35000"": 25,
+  ""390000"": 22
+}",175000,5,6
+sales_medellin.xml,promotion_code,object,0,0.0,7,,,,,,0,"{
+  """": 228,
+  ""PROMO20"": 3,
+  ""PROMO08"": 3,
+  ""PROMO12"": 3,
+  ""PROMO15"": 2
+}",,0,8
+sales_medellin.xml,payment_method,object,0,0.0,3,,,,,,0,"{
+  ""Cash"": 85,
+  ""Transfer"": 79,
+  ""Card"": 77
+}",Cash,4,8

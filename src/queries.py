@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import sqlite3
 
 import matplotlib.pyplot as plt
@@ -22,7 +23,7 @@ COLOR_SECUNDARIO = "#C1873B"
 COLOR_ALERTA = "#B03A48"
 COLOR_EXITO = "#3E7C55"
 
-DB_PATH = "database/retail_analytics.db"
+DB_PATH =  Path(__file__).resolve().parents[1] / "database" / "retail_analytics.db"
 TABLE_NAME = "sales_analytics"
 TABLAS_DIR = "docs/query_outputs/tablas"
 GRAFICAS_DIR = "docs/query_outputs/graficas"

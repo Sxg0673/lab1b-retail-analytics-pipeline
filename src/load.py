@@ -1,9 +1,9 @@
+from pathlib import Path
 import sqlite3
 
 CSV_OUTPUT_PATH = "data/processed/integrated_sales.csv"
-DB_PATH = "database/retail_analytics.db"
 TABLE_NAME = "sales_analytics"
-
+DB_PATH =  Path(__file__).resolve().parents[1] / "database" / "retail_analytics.db"
 
 def load_to_csv(df, output_path=CSV_OUTPUT_PATH): # Guarda el DataFrame transformado en un archivo CSV.
     df.to_csv(output_path, index=False)

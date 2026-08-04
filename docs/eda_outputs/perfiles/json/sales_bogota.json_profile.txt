@@ -1,0 +1,15 @@
+Perfil de datos: sales_bogota.json
+Filas: 281
+Columnas: 8
+Celdas vacías: 261
+Filas duplicadas: 1
+
+Resumen por columna:
+- sale_line_id | dtype=object | nulos=0 | únicos=280
+- sale_date | dtype=object | nulos=0 | únicos=86
+- store_id | dtype=object | nulos=0 | únicos=2
+- product_id | dtype=object | nulos=0 | únicos=15
+- quantity | dtype=int64 | nulos=0 | únicos=5
+- unit_price | dtype=object | nulos=0 | únicos=16
+- promotion_code | dtype=object | nulos=261 | únicos=6
+- payment_method | dtype=object | nulos=0 | únicos=4

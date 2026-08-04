@@ -1,0 +1,10 @@
+Perfil de datos: monthly_targets.csv
+Filas: 9
+Columnas: 3
+Celdas vacías: 0
+Filas duplicadas: 0
+
+Resumen por columna:
+- store_id | dtype=object | nulos=0 | únicos=3
+- month | dtype=object | nulos=0 | únicos=3
+- sales_target | dtype=int64 | nulos=0 | únicos=7

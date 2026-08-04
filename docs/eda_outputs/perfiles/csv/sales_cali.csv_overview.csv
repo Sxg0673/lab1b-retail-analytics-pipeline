@@ -1,0 +1,2 @@
+dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
+sales_cali.csv,241,8,0.07,1,13,228

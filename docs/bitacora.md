@@ -247,3 +247,4 @@ de las nueve combinaciones de tienda y mes lograron cumplir su meta de
 ventas. Sobre el total del periodo se registran 756 transacciones, con 182.6
 millones en ventas brutas y 181.0 millones en ventas netas después de
 descuentos. El código se guardó en src/queries.py.
+

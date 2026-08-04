@@ -74,27 +74,20 @@ def _plot_numeric_distributions(df: pd.DataFrame, output_path: Path):
 
 def _summarize_sales_quality(extracted_data_csv, extracted_data_json, extracted_data_xml):
     rows = []
-    datasets = list(extracted_data_csv.items()) + list(extracted_data_json.items()) + list(extracted_data_xml.items())
+
+    datasets = (
+        list(extracted_data_csv.items()) +
+        list(extracted_data_json.items()) +
+        list(extracted_data_xml.items())
+    )
+
     for dataset_name, frame in datasets:
-        lower_name = dataset_name.lower()
-        if "sales_cali" in lower_name:
-            qty_col, price_col, promo_col, payment_col, date_col = "quantity", "unit_price", "promotion_code", "payment_method", "sale_date"
-            date_format = "%Y-%m-%d"
-        elif "sales_bogota" in lower_name:
-            qty_col, price_col, promo_col, payment_col, date_col = "unidades", "precio", "promocion", "medio_pago", "fecha"
-            date_format = "%d/%m/%Y"
-        elif "sales_medellin" in lower_name:
-            qty_col, price_col, promo_col, payment_col, date_col = "units", "unit_value", "promo_code", "payment", "date"
-            date_format = "%m-%d-%Y"
-        else:
-            continue
 
-        if not all(col in frame.columns for col in [qty_col, price_col, promo_col, payment_col, date_col]):
-            continue
+        quantity_numeric = pd.to_numeric(frame["quantity"], errors="coerce")
+        price_numeric = pd.to_numeric(frame["unit_price"], errors="coerce")
 
-        quantity_numeric = pd.to_numeric(frame[qty_col], errors="coerce")
-        price_numeric = pd.to_numeric(frame[price_col], errors="coerce")
-        dates = pd.to_datetime(frame[date_col], format=date_format, errors="coerce")
+        # Deja que pandas detecte automáticamente el formato de la fecha
+        dates = pd.to_datetime(frame["sale_date"], errors="coerce")
 
         rows.append({
             "dataset": dataset_name,
@@ -102,13 +95,12 @@ def _summarize_sales_quality(extracted_data_csv, extracted_data_json, extracted_
             "invalid_quantity": int(((quantity_numeric <= 0) | quantity_numeric.isna()).sum()),
             "invalid_price": int(((price_numeric <= 0) | price_numeric.isna()).sum()),
             "duplicados": int(frame.duplicated().sum()),
-            "promocion_vacia": int(frame[promo_col].fillna("").astype(str).eq("").sum()),
+            "promocion_vacia": int(frame["promotion_code"].fillna("").astype(str).eq("").sum()),
             "fechas_invalidas": int(dates.isna().sum()),
-            "payment_values": int(frame[payment_col].nunique(dropna=True)),
+            "payment_values": int(frame["payment_method"].nunique(dropna=True)),
         })
 
     return pd.DataFrame(rows)
-
 
 def _plot_sales_quality(summary_df: pd.DataFrame, output_path: Path):
     fig, axes = plt.subplots(2, 2, figsize=(12, 8))
@@ -126,40 +118,48 @@ def _plot_sales_quality(summary_df: pd.DataFrame, output_path: Path):
     plt.close(fig)
 
 
-def _plot_revenue_comparison(extracted_data_csv, extracted_data_json, extracted_data_xml, output_path: Path):
-    rows = []
-    datasets = list(extracted_data_csv.items()) + list(extracted_data_json.items()) + list(extracted_data_xml.items())
-    for dataset_name, frame in datasets:
-        lower_name = dataset_name.lower()
-        if "sales_cali" in lower_name:
-            qty_col, price_col = "quantity", "unit_price"
-        elif "sales_bogota" in lower_name:
-            qty_col, price_col = "unidades", "precio"
-        elif "sales_medellin" in lower_name:
-            qty_col, price_col = "units", "unit_value"
-        else:
-            continue
+def _plot_revenue_comparison(extracted_data_csv,
+                             extracted_data_json,
+                             extracted_data_xml,
+                             output_path: Path):
 
-        quantity_numeric = pd.to_numeric(frame[qty_col], errors="coerce")
-        price_numeric = pd.to_numeric(frame[price_col], errors="coerce")
+    rows = []
+
+    datasets = (
+        list(extracted_data_csv.items()) +
+        list(extracted_data_json.items()) +
+        list(extracted_data_xml.items())
+    )
+
+    for dataset_name, frame in datasets:
+
+        quantity_numeric = pd.to_numeric(frame["quantity"], errors="coerce")
+        price_numeric = pd.to_numeric(frame["unit_price"], errors="coerce")
+
         revenue = (quantity_numeric * price_numeric).fillna(0).sum()
-        rows.append({"dataset": dataset_name, "revenue": float(revenue)})
+
+        rows.append({
+            "dataset": dataset_name,
+            "revenue": float(revenue)
+        })
 
     if not rows:
         return
 
     revenue_df = pd.DataFrame(rows)
+
     fig, ax = plt.subplots(figsize=(7, 4.5))
     revenue_df.plot(kind="bar", x="dataset", y="revenue", ax=ax, color="#B07AA1")
     ax.set_title("Ingresos estimados por fuente")
     ax.set_ylabel("Valor estimado")
     ax.tick_params(axis="x", rotation=45)
+
     plt.tight_layout()
     fig.savefig(output_path, dpi=150)
     plt.close(fig)
 
 
-def run_eda(extracted_data_csv, extracted_data_json, extracted_data_xml, output_dir=None):
+# def run_eda(extracted_data_csv, extracted_data_json, extracted_data_xml, output_dir=None):
     output_dir = Path(output_dir) if output_dir is not None else Path("docs/eda_outputs/graficas")
     output_dir.mkdir(parents=True, exist_ok=True)
 
