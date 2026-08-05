@@ -1,2 +1,2 @@
 dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
-sales_medellin.xml,241,8,0.1,1,241,0
+sales_medellin.xml,241,8,0.02,1,241,0

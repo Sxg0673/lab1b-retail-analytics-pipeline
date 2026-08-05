@@ -1,10 +1,10 @@
 dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
-monthly_targets.csv,store_id,object,0,0.0,3,,,,,,0,"{
+monthly_targets.csv,store_id,str,0,0.0,3,,,,,,0,"{
   ""S01"": 3,
   ""S02"": 3,
   ""S03"": 3
 }",S01,3.0,3.0
-monthly_targets.csv,month,object,0,0.0,3,,,,,,0,"{
+monthly_targets.csv,month,str,0,0.0,3,,,,,,0,"{
   ""2026-02"": 3,
   ""2026-03"": 3,
   ""2026-04"": 3

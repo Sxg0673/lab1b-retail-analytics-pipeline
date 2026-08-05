@@ -1,26 +1,26 @@
 dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
-promotions.csv,promotion_code,object,0,0.0,6,,,,,,0,"{
+promotions.csv,promotion_code,str,0,0.0,6,,,,,,0,"{
   ""PROMO10"": 1,
   ""PROMO15"": 1,
   ""PROMO12"": 1,
   ""PROMO08"": 1,
   ""PROMO20"": 1
 }",PROMO08,7.0,8.0
-promotions.csv,product_id,object,0,0.0,6,,,,,,0,"{
+promotions.csv,product_id,str,0,0.0,6,,,,,,0,"{
   ""P001"": 1,
   ""P004"": 1,
   ""P005"": 1,
   ""P009"": 1,
   ""P013"": 1
 }",P001,4.0,4.0
-promotions.csv,start_date,object,0,0.0,6,,,,,,0,"{
+promotions.csv,start_date,str,0,0.0,6,,,,,,0,"{
   ""2026-02-10"": 1,
   ""2026-03-01"": 1,
   ""2026-03-15"": 1,
   ""2026-02-20"": 1,
   ""2026-04-01"": 1
 }",2026-02-10,10.0,10.0
-promotions.csv,end_date,object,0,0.0,6,,,,,,0,"{
+promotions.csv,end_date,str,0,0.0,6,,,,,,0,"{
   ""2026-02-28"": 1,
   ""2026-03-20"": 1,
   ""2026-04-05"": 1,
@@ -34,7 +34,7 @@ promotions.csv,discount_pct,float64,0,0.0,5,0.08,0.2,0.125,0.11,0.04370354676682
   ""0.08"": 1,
   ""0.2"": 1
 }",,,
-promotions.csv,campaign_name,object,0,0.0,6,,,,,,0,"{
+promotions.csv,campaign_name,str,0,0.0,6,,,,,,0,"{
   ""Coffee Week"": 1,
   ""Kitchen Days"": 1,
   ""Audio Campaign"": 1,
