@@ -12,6 +12,7 @@ from validate import validate_sales
 from load import load_to_csv, load_to_db
 from queries import ejecutar_todas_las_queries
 from log import log_progress
+from dashboard.launcher import launch_dashboard
 
 # Mapeo de cada archivo de transacciones a la sucursal que representa.
 SALES_SOURCE_MAP = {
@@ -156,22 +157,6 @@ def main():
 
     log("Iniciando dashboard Streamlit")
     launch_dashboard(project_root, log_file)
-
-
-def launch_dashboard(project_root, log_file):
-    app_path = project_root / "src" / "dashboard" / "app.py"
-    try:
-        subprocess.run(
-            [sys.executable, "-m", "streamlit", "run", str(app_path)],
-            check=True,
-        )
-    except FileNotFoundError:
-        log_progress(
-            "Streamlit no esta instalado. Instale streamlit y vuelva a ejecutarlo.",
-            log_file,
-        )
-    except subprocess.CalledProcessError:
-        log_progress("No se pudo iniciar el dashboard Streamlit.", log_file)
 
 
 if __name__ == "__main__":
