@@ -51,18 +51,20 @@ def extract_from_json(file_path):
     dataframes = {}
 
     for file in files:
-        dataframes[file.name] = pd.read_json(file)
-        dataframes[file.name]= dataframes[file.name].rename(columns={
-        "id_linea": "sale_line_id",
-        "fecha": "sale_date",
-        "sucursal": "store_id",
-        "codigo_producto": "product_id",
-        "unidades": "quantity",
-        "precio": "unit_price",
-        "promocion": "promotion_code",
-        "medio_pago": "payment_method",
-    })
-    dataframes[file.name] = dataframes[file.name][COMMON_COLUMNS]
+        df = pd.read_json(file)
+        df = df.rename(columns={
+            "id_linea": "sale_line_id",
+            "fecha": "sale_date",
+            "sucursal": "store_id",
+            "codigo_producto": "product_id",
+            "unidades": "quantity",
+            "precio": "unit_price",
+            "promocion": "promotion_code",
+            "medio_pago": "payment_method",
+        })
+        # Se aplica dentro del bucle para que cada archivo quede con el
+        # esquema comun, no solo el ultimo.
+        dataframes[file.name] = df[COMMON_COLUMNS]
 
     return dataframes
 
@@ -78,7 +80,7 @@ def extract_from_xml(file_path):
 
         rows = []
         for sale in root.findall("sale"):
-           rows.append({
+            rows.append({
                 "sale_line_id": sale.findtext("line_id"),
                 "sale_date": sale.findtext("date"),
                 "store_id": sale.findtext("branch_code"),
@@ -88,5 +90,9 @@ def extract_from_xml(file_path):
                 "promotion_code": sale.findtext("promo_code"),
                 "payment_method": sale.findtext("payment"),
             })
-           dataframes[file.name] = pd.DataFrame(rows, columns=COMMON_COLUMNS)
+
+        # El DataFrame se arma una sola vez con todas las filas, en lugar de
+        # reconstruirse en cada iteracion del bucle de ventas.
+        dataframes[file.name] = pd.DataFrame(rows, columns=COMMON_COLUMNS)
+
     return dataframes

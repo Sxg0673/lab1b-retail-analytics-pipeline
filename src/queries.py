@@ -23,10 +23,12 @@ COLOR_SECUNDARIO = "#C1873B"
 COLOR_ALERTA = "#B03A48"
 COLOR_EXITO = "#3E7C55"
 
-DB_PATH =  Path(__file__).resolve().parents[1] / "database" / "retail_analytics.db"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DB_PATH = PROJECT_ROOT / "database" / "retail_analytics.db"
 TABLE_NAME = "sales_analytics"
-TABLAS_DIR = "docs/query_outputs/tablas"
-GRAFICAS_DIR = "docs/query_outputs/graficas"
+# rutas de salida para tablas y gráficas 
+TABLAS_DIR = PROJECT_ROOT / "docs" / "query_outputs" / "tablas"
+GRAFICAS_DIR = PROJECT_ROOT / "docs" / "query_outputs" / "graficas"
 
 
 def _formato_miles(x, _pos=None): # Formato de número con separador de miles y sin decimales.

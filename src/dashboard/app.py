@@ -148,7 +148,7 @@ def render_overview_section(page_size: int) -> None:
     for column, image_name in zip(row_images, chart_files):
         image_path = read_image(image_name)
         if image_path:
-            column.image(image_path, caption=image_name.replace("_", " ").replace(".png", ""), use_column_width=True)
+            column.image(image_path, caption=image_name.replace("_", " ").replace(".png", ""), use_container_width=True)
         else:
             column.write("Sin imagen")
 
