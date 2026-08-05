@@ -1,2 +1,2 @@
 dataset_name,rows,columns,memory_mb,duplicate_rows,complete_rows,missing_cells
-sales_bogota.json,281,8,0.03,1,20,261
+sales_bogota.json,281,8,0.09,1,20,261

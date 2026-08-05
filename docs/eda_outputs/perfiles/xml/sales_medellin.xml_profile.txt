@@ -5,11 +5,11 @@ Celdas vacías: 0
 Filas duplicadas: 1
 
 Resumen por columna:
-- sale_line_id | dtype=str | nulos=0 | únicos=240
-- sale_date | dtype=str | nulos=0 | únicos=81
-- store_id | dtype=str | nulos=0 | únicos=1
-- product_id | dtype=str | nulos=0 | únicos=15
-- quantity | dtype=str | nulos=0 | únicos=4
-- unit_price | dtype=str | nulos=0 | únicos=16
-- promotion_code | dtype=str | nulos=0 | únicos=7
-- payment_method | dtype=str | nulos=0 | únicos=3
+- sale_line_id | dtype=object | nulos=0 | únicos=240
+- sale_date | dtype=object | nulos=0 | únicos=81
+- store_id | dtype=object | nulos=0 | únicos=1
+- product_id | dtype=object | nulos=0 | únicos=15
+- quantity | dtype=object | nulos=0 | únicos=4
+- unit_price | dtype=object | nulos=0 | únicos=16
+- promotion_code | dtype=object | nulos=0 | únicos=7
+- payment_method | dtype=object | nulos=0 | únicos=3

@@ -1,19 +1,19 @@
 dataset_name,column,dtype,missing_count,missing_pct,unique_count,min,max,mean,median,std,invalid_numeric_values,top_values,mode,min_length,max_length
-products.csv,product_id,str,0,0.0,15,,,,,,0,"{
+products.csv,product_id,object,0,0.0,15,,,,,,0,"{
   ""P001"": 1,
   ""P002"": 1,
   ""P003"": 1,
   ""P004"": 1,
   ""P005"": 1
 }",P001,4.0,4.0
-products.csv,product_name,str,0,0.0,15,,,,,,0,"{
+products.csv,product_name,object,0,0.0,15,,,,,,0,"{
   ""Coffee Maker Basic"": 1,
   ""Coffee Maker Premium"": 1,
   ""Blender 500W"": 1,
   ""Air Fryer 4L"": 1,
   ""Wireless Headphones"": 1
 }",Air Fryer 4L,10.0,20.0
-products.csv,category,str,0,0.0,4,,,,,,0,"{
+products.csv,category,object,0,0.0,4,,,,,,0,"{
   ""Small Appliances"": 4,
   ""Electronics"": 4,
   ""Home & Office"": 4,

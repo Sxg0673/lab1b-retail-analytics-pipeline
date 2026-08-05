@@ -5,9 +5,9 @@ Celdas vacías: 0
 Filas duplicadas: 0
 
 Resumen por columna:
-- promotion_code | dtype=str | nulos=0 | únicos=6
-- product_id | dtype=str | nulos=0 | únicos=6
-- start_date | dtype=str | nulos=0 | únicos=6
-- end_date | dtype=str | nulos=0 | únicos=6
+- promotion_code | dtype=object | nulos=0 | únicos=6
+- product_id | dtype=object | nulos=0 | únicos=6
+- start_date | dtype=object | nulos=0 | únicos=6
+- end_date | dtype=object | nulos=0 | únicos=6
 - discount_pct | dtype=float64 | nulos=0 | únicos=5
-- campaign_name | dtype=str | nulos=0 | únicos=6
+- campaign_name | dtype=object | nulos=0 | únicos=6
